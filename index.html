@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #f9f6ff, #dbeafe);
+            background-attachment: fixed;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            width: 320px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .background-books {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background-image: url('https://img.freepik.com/premium-vector/stack-books_119631-472.jpg?w=2000'), 
+                              url('https://img.freepik.com/premium-vector/book-stack-with-open-book-top_243473-146.jpg?w=2000');
+            background-repeat: no-repeat;
+            background-size: 150px, 200px;
+            background-position: left 20px top 30px, right 20px bottom 30px;
+            opacity: 0.1; /* Subtle decoration */
+        }
+        img {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            position: relative;
+            z-index: 1; /* Ensures the form stays above the decorative background */
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorative Background -->
+    <div class="background-books"></div>
+    
+    <div class="container content">
+        <!-- Decorative Image -->
+        <img src="https://img.freepik.com/premium-vector/stack-books_119631-472.jpg?w=2000" alt="Stack of Books">
+        
+        <h1>Predict Your Marks</h1>
+        <form action="/result" method="POST">
+            <label for="number_courses">Number of Courses:</label>
+            <input type="number" id="number_courses" name="number_courses" required step="0.01" min="0">
+            
+            <label for="time_study">Time Spent Studying (hours):</label>
+            <input type="number" id="time_study" name="time_study" required step="0.01" min="0">
+            
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html

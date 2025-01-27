@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://user-images.githubusercontent.com/69152112/210169299-0c11ba40-2f14-49cf-b592-56f6c223274d.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        h1, h2 {
+            background-color: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .result-box {
+            margin-top: 30px;
+            background-color: rgba(0, 123, 255, 0.8);
+            padding: 40px;
+            border-radius: 15px;
+            width: 70%;
+            max-width: 800px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .result-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .result-box p {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            line-height: 1.5;
+            color: #fff;
+        }
+
+        .result-box strong {
+            color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .back-button {
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            h1, h2 {
+                font-size: 2rem;
+            }
+
+            .result-box {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="result-box">
+        <h2>Results for Your Study Data</h2>
+        <p><strong>Number of Courses:</strong> {{ number_courses }}</p>
+        <p><strong>Time Studied (hours):</strong> {{ time_study }} hours</p>
+        <p><strong>Predicted Marks:</strong> {{ predicted_marks }}%</p>
+    </div>
+    <a href="/" class="back-button">Go Back</a>
+</body>
+</html>
